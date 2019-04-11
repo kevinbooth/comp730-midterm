@@ -9,17 +9,17 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 
 public class TestInventoryItem {
-	private InventoryItem inv;
+	private InventoryItem item;
 	
 	@BeforeEach
 	void setUp() throws Exception {
-		InventoryItem inv = new InventoryItem("weapon", 6, "sword", 3);
+		item = new InventoryItem("weapon", 6, "sword", 3);
 	}
 	
 	@Test
 	void test_getName() {
 		String expected = "sword";
-		String actual = inv.getName();
+		String actual = item.getName();
 		
 		assertEquals(expected, actual, "The actual name doesn't match the expected name");
 	}
@@ -27,25 +27,32 @@ public class TestInventoryItem {
 	@Test
 	void test_getType() {
 		String expected = "weapon";
-		String actual = inv.getType();
+		String actual = item.getType();
 		
-		assertEquals(expected, actual, "The actual name doesn't match the expected name");
+		assertEquals(expected, actual, "The actual type doesn't match the expected type");
 	}
 	
 	@Test
 	void test_getWeight() {
-		int expected = 2;
-		int actual = inv.getWeight();
+		int expected = 6;
+		int actual = item.getWeight();
 		
-		assertEquals(expected, actual, "The actual name doesn't match the expected name");
+		assertEquals(expected, actual, "The actual weight doesn't match the expected weight");
 	}
 	
 	@Test
 	void test_getCount() {
 		int expected = 3;
-		int actual = inv.getCount();
+		int actual = item.getCount();
 		
-		assertEquals(expected, actual, "The actual name doesn't match the expected name");
+		assertEquals(expected, actual, "The actual count doesn't match the expected count");
 	}
 	
+	@Test
+	void test_toString() {
+		String expected = "sword" + " type (" + "weapon" + "), wt: " + 6 + ", there are " + 3 + " left";
+		String actual = item.toString();
+		
+		assertEquals(expected, actual, "The actual string doesn't match the expected string");
+	}
 }
