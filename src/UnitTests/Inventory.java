@@ -33,6 +33,7 @@ public class Inventory {
 	
 	public int getWeight() {return weight; }
 	public int getCount() {return items.size(); }
+	public List<InventoryItem> getList() { return items; }
 	public String toString() {
 		String ret = "Your inventory has:\n";
 		for (InventoryItem i : items) {
