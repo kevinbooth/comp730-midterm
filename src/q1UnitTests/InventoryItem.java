@@ -1,4 +1,4 @@
-package UnitTests;
+package q1UnitTests;
 
 public class InventoryItem {
 	String type;
