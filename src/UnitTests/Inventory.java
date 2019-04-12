@@ -37,7 +37,7 @@ public class Inventory {
 	public String toString() {
 		String ret = "Your inventory has:\n";
 		for (InventoryItem i : items) {
-			ret = i.toString();
+			ret += i.toString();
 		}
 		return ret;
 	}

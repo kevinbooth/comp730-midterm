@@ -29,21 +29,21 @@ public class TestInventory {
 	void test_addItemToInventory_ShouldFailToAdd() { // Mockito utilization 
 		when(mockItem.getWeight()).thenReturn(251);
 		
-		// Test if there's nothing in the list
-		assertEquals(0, spyInv.getList().size(), "The list was larger than 0 (Before trying to add item)");
+		// Test if there's anything in the list
+		assertEquals(0, spyInv.getList().size(), "The list didn't have 0 items (Before trying to add item)");
 		// Test if the method returns the proper value
 		boolean result = spyInv.addItemToInventory(mockItem);
 		assertFalse(result, "The method returned true when it should have been false.");
 		// Test if the list resembles what the method told us
-		assertEquals(0, spyInv.getList().size(), "The list was larger than 0 (After trying to add item)");
+		assertEquals(0, spyInv.getList().size(), "The list didn't have 0 items (After trying to add item)");
 	}
 	
 	@Test
 	void test_addItemToInventory_ShouldAdd() { // Mockito utilization
 		when(mockItem.getWeight()).thenReturn(249);
 		
-		// Test if there's nothing in the list
-		assertEquals(0, spyInv.getList().size(), "The list was larger than 0 (Before trying to add item)");
+		// Test if there's anything in the list
+		assertEquals(0, spyInv.getList().size(), "The list didn't have 0 items (Before trying to add item)");
 		// Test if the method returns the proper value
 		boolean result = spyInv.addItemToInventory(mockItem);
 		assertTrue(result, "The item wasn't able to be added to the list.");
@@ -55,9 +55,14 @@ public class TestInventory {
 	void test_dropInventoryItem_ShouldDelete() {
 		InventoryItem item = new InventoryItem("weapon", 26, "axe", 1);
 		inv.addItemToInventory(item);
-		boolean result = inv.dropInventoryItem(item);
 		
+		// Test if there's anything in the list
+		assertEquals(1, inv.getList().size(), "The list didn't have 1 item (Before trying to delete item)");
+		// Test if the method returns the proper value
+		boolean result = inv.dropInventoryItem(item);
 		assertTrue(result, "The item couldn't be found in the inventory.");
+		// Test if the list resembles what the method told us
+		assertEquals(0, inv.getList().size(), "The list didn't have 0 items (After trying to delete item)");
 	}
 	
 	@Test
@@ -73,6 +78,15 @@ public class TestInventory {
 	
 	@Test
 	void test_toString() {
+		InventoryItem item1 = new InventoryItem("weapon", 4, "knife", 1);
+		InventoryItem item2 = new InventoryItem("food", 1, "slice of bread", 1);
+		inv.addItemToInventory(item1);
+		inv.addItemToInventory(item2);
+		
+		String expected = "Your inventory has:\n" + item1.toString() + item2.toString();
+		String actual = inv.toString();
+		
+		assertEquals(expected, actual, "The expected value didn't match the actual value");
 		
 	}
 }
