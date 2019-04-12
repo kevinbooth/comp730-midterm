@@ -24,7 +24,7 @@ public class InventoryItem {
 		if (count > 1) {
 			ret += ", there are " + count + " left";
 		}
-		return name;
+		return ret;
 		
 	}
 

@@ -9,5 +9,35 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 
 public class TestInventory {
-
+	private Inventory inv;
+	
+	@Mock
+	private Inventory spyInv;
+	
+	@Mock
+	private InventoryItem mockItem;
+	
+	
+	@BeforeEach
+	void setUp() {
+		inv = new Inventory();
+		spyInv = spy(new Inventory());
+		mockItem = mock(InventoryItem.class);
+	}
+	
+	@Test
+	void test_addItemToInventory_ShouldFail() {
+		when(mockItem.getWeight()).thenReturn(251);
+		boolean result = spyInv.addItemToInventory(mockItem);
+		
+		assertFalse(result, "The method did not return false");
+	}
+	
+	@Test
+	void test_addItemToInventory_ShouldPass() {
+		when(mockItem.getWeight()).thenReturn(249);
+		boolean result = spyInv.addItemToInventory(mockItem);
+		
+		assertTrue(result, "The method did not return false");
+	}
 }
