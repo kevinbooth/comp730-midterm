@@ -26,18 +26,27 @@ public class TestInventory {
 	}
 	
 	@Test
-	void test_addItemToInventory_ShouldFail() {
+	void test_addItemToInventory_ShouldFail() { // Mockito utilization 
 		when(mockItem.getWeight()).thenReturn(251);
 		boolean result = spyInv.addItemToInventory(mockItem);
 		
-		assertFalse(result, "The method did not return false");
+		assertFalse(result, "The item was able to be added to the list.");
 	}
 	
 	@Test
-	void test_addItemToInventory_ShouldPass() {
+	void test_addItemToInventory_ShouldPass() { // Mockito utilization
 		when(mockItem.getWeight()).thenReturn(249);
 		boolean result = spyInv.addItemToInventory(mockItem);
 		
-		assertTrue(result, "The method did not return false");
+		assertTrue(result, "The item wasn't able to be added to the list.");
+	}
+	
+	@Test
+	void test_dropInventoryItem_ShouldDelete() {
+		InventoryItem item = new InventoryItem("weapon", 26, "axe", 1);
+		inv.addItemToInventory(item);
+		boolean result = inv.dropInventoryItem(item);
+		
+		assertTrue(result, "The item couldn't be found in the inventory.")
 	}
 }
