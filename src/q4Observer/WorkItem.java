@@ -10,4 +10,12 @@ public class WorkItem {
 		this.workerID = workerID;
 		this.message = message;
 	}
+	
+	public String getItemID() {
+		return itemID;
+	}
+	
+	public String getMessage() {
+		return message;
+	}
 }
