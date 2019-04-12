@@ -4,7 +4,7 @@ public class Worker implements Observer {
 	private long workerID;
 	
 	public Worker(long workerID) {
-		workerID = workerID;
+		this.workerID = workerID;
 	}
 	
 	@Override
