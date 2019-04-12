@@ -1,21 +1,28 @@
 package q3Interface;
 
 public class Brownie implements BakedGoods {
+	private int price;
+	private String desc;
+	private String sellByDate;
+	
+	public Brownie(int price, String desc, String sellByDate) {
+		this.price = price;
+		this.desc = desc;
+		this.sellByDate = sellByDate;
+	}
+	
 	@Override
 	public int getPrice() {
-		// TODO Auto-generated method stub
-		return 0;
+		return  price;
 	}
 
 	@Override
 	public String getDescription() {
-		// TODO Auto-generated method stub
-		return null;
+		return "A moist, luscious brownie. " + desc;
 	}
 
 	@Override
 	public String getSellByDate() {
-		// TODO Auto-generated method stub
-		return null;
+		return sellByDate;
 	}
 }

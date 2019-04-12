@@ -6,7 +6,7 @@ public class Cookie implements BakedGoods {
 	private String sellByDate;
 	
 	public Cookie(int price, String desc, String sellByDate) {
-		this.price = price
+		this.price = price;
 		this.desc = desc;
 		this.sellByDate = sellByDate;
 	}
@@ -18,11 +18,11 @@ public class Cookie implements BakedGoods {
 
 	@Override
 	public String getDescription() {
-		return "A delicious cookie." + desc;
+		return "A delicious cookie. " + desc;
 	}
 
 	@Override
 	public String getSellByDate() {
-		return sellByDate
+		return sellByDate;
 	}
 }
