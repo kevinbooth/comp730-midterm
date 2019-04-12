@@ -1,4 +1,4 @@
-package q2Interface;
+package q3Interface;
 
 public interface BakedGoods {
 	public int getPrice();
