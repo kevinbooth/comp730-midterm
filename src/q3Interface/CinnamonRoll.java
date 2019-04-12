@@ -1,7 +1,6 @@
 package q3Interface;
 
 public class CinnamonRoll implements BakedGoods {
-
 	@Override
 	public int getPrice() {
 		// TODO Auto-generated method stub
@@ -19,5 +18,4 @@ public class CinnamonRoll implements BakedGoods {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 }
