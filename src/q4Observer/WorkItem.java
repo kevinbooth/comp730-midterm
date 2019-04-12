@@ -11,11 +11,11 @@ public class WorkItem {
 		this.message = message;
 	}
 	
-	public String getItemID() {
-		return itemID;
-	}
+	public String getItemID() { return itemID; }
 	
-	public String getMessage() {
-		return message;
-	}
+	public void setItemID(String itemID) { this.itemID = itemID; }
+	
+	public long getWorkerID() { return workerID; }
+	
+	public String getMessage() { return message; }
 }

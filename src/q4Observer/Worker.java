@@ -7,12 +7,19 @@ public class Worker {
 		this.workerID = workerID;
 	}
 	
+	public long getWorkerID() { return workerID; }
+	
 	public String notify(WorkItem i) {
-		if (i.getItemID() == Long.toString(workerID)) {
-			return "Worker" + 
+		if (i.getItemID().equals(Long.toString(workerID))) {
+			// Increment itemID
+			int itemID = Integer.parseInt(i.getItemID()) + 1;
+			i.setItemID(Integer.toString((itemID)));
+			
+			return "Worker " + 
 					workerID +  
-					"processed WorkItem" +  
-					"message" +
+					" processed WorkItem " +
+					i.getItemID() +
+					" message " +
 					i.getMessage();
 		}
 		return null;

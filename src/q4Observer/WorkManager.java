@@ -8,21 +8,21 @@ public class WorkManager {
 	
 	public WorkManager() {}
 	
-	public void registerWorker(Worker w) {
-		workers.add(w);
-	}
+	public void registerWorker(Worker w) { workers.add(w); }
 	
-	public void removeWorker(Worker w) {
-		workers.remove(w);
-	}
+	public void removeWorker(Worker w) { workers.remove(w); }
 	
-	public void notifyManager(WorkItem i) {
-		notify(i);
-	}
+	public void notifyManager(WorkItem i) { notify(i); }
 	
 	public void notify(WorkItem i) {
 		for (Worker w : workers) {
-			w.notify(i);
+			if (w.getWorkerID() < 4) {
+				String result = w.notify(i);
+				
+				if (result != null) {
+					System.out.println(result);
+				}
+			}
 		}
 	}
 }
