@@ -3,10 +3,10 @@ package q4Strategy;
 public class BookInformation {
 	private String author;
 	private String title;
-	private String yearPublished;
+	private int yearPublished;
 	private String summary;
 	
-	public BookInformation(String author, String title, String yearPublished, String summary) {
+	public BookInformation(String author, String title, int yearPublished, String summary) {
 		this.author = author;
 		this.title = title;
 		this.yearPublished = yearPublished;
@@ -15,6 +15,6 @@ public class BookInformation {
 	
 	public String getAuthor() { return author; }
 	public String getTitle() { return title; }
-	public String getYearPublished() { return yearPublished; }
+	public int getYearPublished() { return yearPublished; }
 	public String getSummary() { return summary; }
 }

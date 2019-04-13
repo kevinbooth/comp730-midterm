@@ -14,17 +14,22 @@ public class BookLibrarian {
 	}
 	
 	public void sort() {
-		List<BookInformation> sortedBooks = sortMethod.sort(books);
-		print(sortedBooks);
+		if (sortMethod != null) {
+			List<BookInformation> sortedBooks = sortMethod.sort(books);
+			print(sortedBooks);
+		} else {
+			System.out.println("A sorting method has not been defined.");
+			print(books);
+		}
 	}
 	
-	public void print(List<BookInformation> bookList) {
+	private void print(List<BookInformation> bookList) {
 		for (BookInformation b : bookList) {
-			System.out.print(	
+			System.out.println(	
 							"Author: " + b.getAuthor() +
-							" Title: " + b.getTitle() +
-							" Year Published: " + b.getYearPublished() +
-							" Summary: " + b.getSummary()
+							"\t\tTitle: " + b.getTitle() +
+							"\t\tYear Published: " + b.getYearPublished() +
+							"\n\tSummary: " + b.getSummary()
 							);
 		}
 	}
