@@ -11,16 +11,17 @@ public class Worker {
 	
 	public String notify(WorkItem i) {
 		if (i.getItemID().equals(Long.toString(workerID))) {
+			String message = "Worker " + 
+							workerID +  
+							" processed WorkItem " +
+							i.getItemID() +
+							" message " +
+							i.getMessage();
 			// Increment itemID
 			int itemID = Integer.parseInt(i.getItemID()) + 1;
 			i.setItemID(Integer.toString((itemID)));
 			
-			return "Worker " + 
-					workerID +  
-					" processed WorkItem " +
-					i.getItemID() +
-					" message " +
-					i.getMessage();
+			return message;
 		}
 		return null;
 	}
