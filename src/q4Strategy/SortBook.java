@@ -22,7 +22,7 @@ public class SortBook {
 		} else if (field == "title") {
 			sorted = sortTitle(books);
 			return sorted;
-		} else if (field == "yearPublished") {
+		} else if (field == "year published") {
 			sorted = sortYearPublished(books);
 			return sorted;
 		} else {

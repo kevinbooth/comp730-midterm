@@ -13,17 +13,15 @@ public class BookLibrarian {
 		books.add(b);
 	}
 	
-	public void sort() {
+	public void printList() {
+		List<BookInformation> bookList;
+		
 		if (sortMethod != null) {
-			List<BookInformation> sortedBooks = sortMethod.sort(books);
-			print(sortedBooks);
+			bookList = sortMethod.sort(books);
 		} else {
-			System.out.println("A sorting method has not been defined.");
-			print(books);
+			bookList = books;
 		}
-	}
-	
-	private void print(List<BookInformation> bookList) {
+		
 		for (BookInformation b : bookList) {
 			System.out.println(	
 							"Author: " + b.getAuthor() +

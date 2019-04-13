@@ -64,24 +64,24 @@ public class Main {
 				+ "UI, and a common-sense project structure."));
 		
 		// Unsorted
-		System.out.println("\n\nSort: Unsorted");
-		librarian.sort();
+		System.out.println("Sort: Unsorted");
+		librarian.printList();
 		
 		// Sort by Author
 		System.out.println("\n\nSort: Author alphabetical");
 		librarian.setSortMethod(new SortBook("author"));
-		librarian.sort();
+		librarian.printList();
 		
 		// Sort by Title
 		System.out.println("\n\nSort: Title alphabetical");
 		librarian.setSortMethod(new SortBook("title"));
-		librarian.sort();
+		librarian.printList();
 		
 		
 		// Sort by Year Published
 		System.out.println("\n\nSort: Year Published oldest");
-		librarian.setSortMethod(new SortBook("yearPublished"));
-		librarian.sort();
+		librarian.setSortMethod(new SortBook("year published"));
+		librarian.printList();
 	}
 
 }
