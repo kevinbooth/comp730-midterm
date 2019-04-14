@@ -19,13 +19,10 @@ public class Main {
 		WorkItem item1 = new WorkItem("1", 1, "Fix the sink");
 		manager.notify(item1);
 		
-		WorkItem item2 = new WorkItem("2", 2, "Hang new painting");
-		manager.notify(item2);
-		
 		WorkItem item3 = new WorkItem("3", 3, "Install door knob");
 		manager.notify(item3);
 		
-		WorkItem item4 = new WorkItem("4", 4, "Paint hallway wall");
+		WorkItem item4 = new WorkItem("5", 5, "Paint hallway wall");
 		manager.notify(item4);
 	}
 }

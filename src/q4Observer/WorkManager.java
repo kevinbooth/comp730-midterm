@@ -12,11 +12,9 @@ public class WorkManager {
 	
 	public void removeWorker(Worker w) { workers.remove(w); }
 	
-	public void notifyManager(WorkItem i) { notify(i); }
-	
 	public void notify(WorkItem i) {
 		for (Worker w : workers) {
-			if (w.getWorkerID() < 4) {
+			if (w.getWorkerID() <= 4) {
 				String result = w.notify(i);
 				
 				if (result != null) {
